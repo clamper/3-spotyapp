@@ -14,13 +14,18 @@ import { ArtistComponent } from './components/artist/artist.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 
 
+// PIPES
+import { ImageControlPipe } from './pipes/image-control.pipe';
+
+
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     SearchComponent,
     ArtistComponent,
-    NavbarComponent
+    NavbarComponent,
+    ImageControlPipe
   ],
   imports: [
     BrowserModule,

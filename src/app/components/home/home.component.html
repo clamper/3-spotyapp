@@ -1,11 +1,11 @@
 <div class="card-columns">
 
     <div *ngFor="let item of newReleases" class="card">
-        <img [src]="item.images[0].url" class="card-img-top" alt="...">
+        <img [src]="item.images | imageControl" class="card-img-top" alt="...">
         <div class="card-body">
             <h5 class="card-title"> {{ item.name }}</h5>
             <p class="card-text">
-                <span *ngFor="let artist of item.artists" class="d-block badge badge-primary text-truncate"> {{ artist.name }} </span>
+                <span *ngFor="let artist of item.artists" class="d-block badge badge-primary text-truncate m-1"> {{ artist.name }} </span>
             </p>
         </div>
     </div>
