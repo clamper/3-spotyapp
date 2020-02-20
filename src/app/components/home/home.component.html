@@ -1,13 +1,12 @@
-<div class="card-columns">
+<app-loading *ngIf="loading"></app-loading>
 
-    <div *ngFor="let item of newReleases" class="card">
-        <img [src]="item.images | imageControl" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title"> {{ item.name }}</h5>
-            <p class="card-text">
-                <span *ngFor="let artist of item.artists" class="d-block badge badge-primary text-truncate m-1"> {{ artist.name }} </span>
-            </p>
-        </div>
-    </div>
+<div>
 
 </div>
+
+
+<div *ngIf="error" class="alert alert-danger" role="alert">
+    <strong>un error</strong>
+</div>
+
+<app-card [items]="newReleases"></app-card>

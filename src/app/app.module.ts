@@ -12,10 +12,13 @@ import { HomeComponent } from './components/home/home.component';
 import { SearchComponent } from './components/search/search.component';
 import { ArtistComponent } from './components/artist/artist.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
-
+import { CardComponent } from './components/card/card.component';
+import { LoadingComponent } from './components/shared/loading/loading.component';
 
 // PIPES
 import { ImageControlPipe } from './pipes/image-control.pipe';
+import { DomseguroPipe } from './pipes/domseguro.pipe';
+
 
 
 @NgModule({
@@ -25,7 +28,10 @@ import { ImageControlPipe } from './pipes/image-control.pipe';
     SearchComponent,
     ArtistComponent,
     NavbarComponent,
-    ImageControlPipe
+    ImageControlPipe,
+    DomseguroPipe,
+    CardComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,
