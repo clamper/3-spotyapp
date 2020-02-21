@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { map } from "rxjs/operators";
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +14,7 @@ export class SpotifyService {
     const url = `https://api.spotify.com/v1/${query}`;
 
     const headers = new HttpHeaders({
-      Authorization: 'Bearer BQD3u5wJ85ZJc1HpT3IL3FPtTLRNnZ7HENUcN3-g0ZqBM1A4Jr4qcVms5F5NANe9KImryO0PtPnMbvoj8xs'
+      Authorization: 'Bearer BQClla_Iydut8lNhxuVJL-Lses06X2-5neQalDcPcwYw1QzrvHuq56iVEoLmmUxWo6BILy6k-UZZni4vWdI'
     });
 
     return this.http.get( url, { headers });
@@ -23,7 +23,7 @@ export class SpotifyService {
   getNewReleases(): any {
 
     return this.getQuery('browse/new-releases?limit=20')
-      .pipe( map(data => data.albums.items ));
+      .pipe( map(data => data['albums'].items ));
   }
 
   getArtists(term: string): any {
@@ -35,12 +35,12 @@ export class SpotifyService {
   getArtist(id: string): any {
 
     return this.getQuery(`artists/${id}`);
-      //.pipe( map(data => data['artists'].items ));
+      // .pipe( map(data => data['artists'].items ));
   }
 
   getTopTracksForArtist(id: string) {
     return this.getQuery(`artists/${id}/top-tracks?country=es`)
-      .pipe( map(data => data.tracks ));
+      .pipe( map(data => data['tracks'] ));
   }
 
 }
